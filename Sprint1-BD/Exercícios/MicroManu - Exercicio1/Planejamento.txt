@@ -1,0 +1,31 @@
+				MicroManu
+
+Cliente:
+IdCliente
+Nome
+Telefone
+Endereço
+dataNascimento
+
+Funcionário:
+IdFuncionário
+Nome
+
+Conserto:
+IdConserto
+IdCliente
+IdFuncionario
+IdPeça
+Conserto
+Data Do Conserto
+Id status do conserto
+
+Peça:
+IdPeça
+IdCliente
+Nome
+
+StatusDoConserto:
+Id status do conserto
+Status: Entregue , Pronto , Recebido, Em Andamento.
+
