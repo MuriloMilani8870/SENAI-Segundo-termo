@@ -1,0 +1,41 @@
+				Petsuka
+
+Donos:
+IdDono
+Nome
+Telefone
+Endereço
+dataNascimento
+
+Veterinários:
+IdVeterinários
+Nome
+Salário
+Função
+
+Clinica:
+IdClinica
+Nome
+Endereço
+
+Pets:
+IdPet
+Nome
+Data De Nascimento
+
+Tipo do pet:
+IdTipo
+Nome Tipo
+
+
+Raça do pet:
+IdRaça
+Nome Raça
+
+Atendimento:
+IdAtendimento
+IdDono
+IdVeterinario
+IdPet
+Descrição do atendimento
+Data do atendimento
