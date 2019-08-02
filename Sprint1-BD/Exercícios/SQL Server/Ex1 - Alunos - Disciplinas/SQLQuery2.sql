@@ -11,6 +11,12 @@ Insert INTO Cursos (Nome)
 			,('Curso B')
 			,('Curso C');
 
+Insert Into Disciplinas (Nome, IdCurso)
+	Values ('HTML' , 1)
+		,('CSS' , 1)
+		,('Banco De Dados' , 1)
+		,('Cloud Computer' , 6)
+
 
 Select IdCurso , Nome
 	FROM Cursos
@@ -20,6 +26,9 @@ Select IdCurso , Nome
 
 Select *
 From Cursos
+
+Select *
+From Disciplinas
 
 Select Nome , IdCurso
 	FROM Cursos
@@ -40,4 +49,9 @@ Delete FROM Cursos
 	Where IdCurso = 6;
 
 	Insert INTO Disciplinas (Nome , IdCurso)
+
+Select Disciplinas.* , Cursos.Nome
+From Disciplinas
+Inner Join Cursos
+ON Disciplinas.IdCurso = Cursos.IdCurso;
 	

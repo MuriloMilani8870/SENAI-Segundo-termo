@@ -28,16 +28,37 @@ Insert INTO Artistas (Nome , IdEstiloMusical)
 			,('Nirvana' , 1);
 
 	
-Select Nome
+Select Nome 
 From Artistas
+
+Insert INTO Artistas (Nome)
+	Values ('Picasso')
 
 Select *
 From Artistas
 
 Select *
 From EstilosMusicais
+Where IdEstiloMusical = 1;
 
-Delete FROM Artistas
+Select *
+From EstilosMusicais
+Where Nome = 'Rap';
 
-Drop Table Artistas
+Select *
+From EstilosMusicais
+Where Nome LIKE 'Ra%';
+
+Select *
+From EstilosMusicais
+Where Nome LIKE '%L';
+
+Select *
+From EstilosMusicais
+Where Nome LIKE '%A%';
+
+Select Artistas.* , EstilosMusicais.*
+From Artistas 
+Full Join EstilosMusicais
+ON Artistas.IdEstiloMusical = EstilosMusicais.IdEstiloMusical;
 
