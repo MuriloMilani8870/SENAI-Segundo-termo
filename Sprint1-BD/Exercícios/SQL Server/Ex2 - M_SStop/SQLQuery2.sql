@@ -10,6 +10,7 @@ Insert INTO EstilosMusicais (Nome)
 			,('Sertanejo')
 			,('Funk');
 
+
 Insert INTO EstilosMusicais (Nome)
 	VALUES ('POP');
 
@@ -27,6 +28,8 @@ Insert INTO Artistas (Nome , IdEstiloMusical)
 			,('Imagine Dragons' , 1)
 			,('Nirvana' , 1);
 
+			insert into EstilosMusicais (Nome)
+			Values ('Pagode')
 	
 Select Nome 
 From Artistas
