@@ -40,6 +40,10 @@ Insert INTO Artistas (Nome)
 Select *
 From Artistas
 
+
+Select *
+From EstilosMusicais order by IdEstiloMusical asc
+
 Select *
 From EstilosMusicais
 Where IdEstiloMusical = 1;

@@ -38,7 +38,7 @@ namespace Senai.Sstop.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
-            EstiloDomain Estilo = estilos.Find(x => x.IdEstilo == id);
+            EstiloDomain Estilo = estiloRepository.BuscarPorId(id);
             if (Estilo == null)
             {
                 return NotFound();
@@ -49,13 +49,24 @@ namespace Senai.Sstop.WebApi.Controllers
         [HttpPost]
         public IActionResult Cadastrar(EstiloDomain estiloDomain)
         {
-            estilos.Add(new EstiloDomain
-            {
-                IdEstilo = estilos.Count + 1,
-                Nome = estiloDomain.Nome
-            }
-            );
-            return Ok(estilos);
+            estiloRepository.Cadastrar(estiloDomain);
+            return Ok();
+        }
+        
+        [HttpPut]
+
+        public IActionResult Atualizar(EstiloDomain estiloDomain)
+        {
+            estiloRepository.Alterar(estiloDomain);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+
+        public IActionResult Deletar(int id)
+        {
+            estiloRepository.Deletar(id);
+            return Ok();
         }
 
         //[HttpGet]

@@ -4,13 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Senai.Sstop.WebApi.Domains
+namespace Senai.Filmes.WebApi.Domains
 {
-    public class EstiloDomain
+    public class GeneroDomain
     {
-        public int IdEstilo { get; set; }
-        [Required(ErrorMessage = "O Nome do Estilo Musical é obrigatório.")]
+
+        public int IdGenero { get; set; }
+        [Required(ErrorMessage = "O Nome do Genero é obrigatório.")]
         public string Nome { get; set; }
 
     }
 }
+
