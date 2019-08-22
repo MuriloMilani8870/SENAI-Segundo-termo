@@ -14,3 +14,9 @@ CREATE TABLE Filmes
     ,Titulo     VARCHAR(200) UNIQUE
     ,IdGenero   INT FOREIGN KEY REFERENCES Generos (IdGenero)
 );
+
+select * from Filmes
+select * from Generos
+
+
+SELECT F.IdFilme, F.Titulo, F.IdGenero, G.Titulo AS TituloGenero FROM Filmes F INNER JOIN Generos G ON A.IdGenero = E.IdGenero;
