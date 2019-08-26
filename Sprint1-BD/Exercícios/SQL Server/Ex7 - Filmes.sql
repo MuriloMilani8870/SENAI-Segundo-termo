@@ -19,4 +19,4 @@ select * from Filmes
 select * from Generos
 
 
-SELECT F.IdFilme, F.Titulo, F.IdGenero, G.Titulo AS TituloGenero FROM Filmes F INNER JOIN Generos G ON A.IdGenero = E.IdGenero;
+SELECT F.IdFilme, F.Titulo, F.IdGenero, G.Nome AS TituloGenero FROM Filmes F INNER JOIN Generos G ON F.IdGenero = G.IdGenero;
