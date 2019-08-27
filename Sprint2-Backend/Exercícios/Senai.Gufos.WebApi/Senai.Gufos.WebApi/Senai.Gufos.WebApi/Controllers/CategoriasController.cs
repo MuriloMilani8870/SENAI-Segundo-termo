@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Gufos.WebApi.Domains;
@@ -17,6 +18,7 @@ namespace Senai.Gufos.WebApi.Controllers
 
         CategoriaRepository CategoriaRepository = new CategoriaRepository();
 
+        [Authorize]
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -44,7 +46,9 @@ namespace Senai.Gufos.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Categoria Encontrada</returns>
-       [HttpGet("{id}")]
+        /// 
+        [Authorize (Roles = "Administrador")]
+        [HttpGet("{id}")]
        public IActionResult BuscarPorId(int id)
         {
             Categorias Categoria = CategoriaRepository.BuscarPorId(id);
