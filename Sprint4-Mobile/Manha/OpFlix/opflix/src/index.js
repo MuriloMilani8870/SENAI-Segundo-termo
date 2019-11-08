@@ -4,6 +4,8 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import MainScreen from './pages/main';
 import SignInScreen from './pages/signin';
+import FiltersScreen from './pages/filters';
+
 
 // criar a navegacao com o login - autenticacao
 const AuthStack = createStackNavigator({
@@ -14,6 +16,9 @@ const MainNavigator = createBottomTabNavigator(
   {
     Main: {
       screen: MainScreen,
+    },
+    Filters: {
+      screen: FiltersScreen,
     },
   },
 );
