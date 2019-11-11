@@ -70,20 +70,21 @@ class SignIn extends Component {
 
   render() {
     return (
-      <View style={styles.Background}>
-        <ImageBackground source={image} style={{ width: '-200%', height: '100%', display: "flex", justifyContent: "center", alignItems: "center", }}>
+      <View>
+        <ImageBackground source={image} style={{ width: '-100%', height: '100%', display: "flex", justifyContent: "center", alignItems: "center", }}>
           <View style={styles.Container}>
+            <Text style={styles.Title}>Efetue seu login</Text>
             <TextInput
               placeholder="Email"
               onChangeText={email => this.setState({ email })}
-              value={this.state.email} style={styles.bigBlue}
+              value={this.state.email} style={styles.ContentInput}
             />
             <TextInput
               placeholder="Senha"
               onChangeText={senha => this.setState({ senha })}
-              value={this.state.senha} style={styles.red}
+              value={this.state.senha} style={styles.ContentInput}
             />
-            <TouchableOpacity onPress={this._realizarLogin}>
+            <TouchableOpacity onPress={this._realizarLogin} style={styles.ContentSubmit}>
               <Text>Login</Text>
             </TouchableOpacity>
           </View>
@@ -96,29 +97,52 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
-  bigBlue: {  
+  ContentInput: {  
     color: '#000',
     fontWeight: 'bold',
     fontSize: 20,
     backgroundColor: 'white',
     width: 250,
-    height: 100
+    height: 50,
+    marginBottom: 20,
+    opacity: 1,
   },
-  red: {
+  ContentSubmit: {
+    display: "flex",
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     color: '#000',
     fontWeight: 'bold',
     fontSize: 20,
     backgroundColor: 'white',
-    width: 250,
-    height: 100
+    width: 75,
+    height: 30,
+    fontSize: 100,
   },
   Container:{
     display: "flex",
     alignContent: 'space-around',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "#000",
-    width: 250,
-    height: 100
-    // opacity: 100
+    width: 300,
+    height: 250,
+    opacity: 0.8,
+  },
+  Title:{
+    display: 'flex',
+    textAlign: "center",
+    justifyContent: "center",
+    fontSize: 15,
+    backgroundColor: 'white',
+    marginBottom: 20,
+    width: 150,
+    // height: 30,
+
+  },
+  Header:{
+
   }
 });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Text, View, StyleSheet,
-    AsyncStorage,
+    AsyncStorage, Image,
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
@@ -36,27 +36,89 @@ class Main extends Component {
 
     render() {
         return (
-            <FlatList
-                data={this.state.lancamentos}
-                keyExtractor={item => item.idLancamento}
-                renderItem={({ item }) => (
+            <View style={styles.main}>
+                <View style={styles.mainBody}>
                     <View>
-                        <Text>{item.idLancamento}</Text>
-                        <Text>{item.titulo}</Text>
-                        <Text>{item.idCategoriaNavigation.nomeCategoria}</Text>
-                        <Text>{item.idFormatoNavigation.nomeFormato}</Text>
-                        <Text>{item.sinopse}</Text>
-                        <Text>{item.duracao}</Text>
-                        <Text>{item.dataLancamento}</Text>
+                    <Image
+                            source={require("../assets/img/Logo_Opflix.png")}
+                            style={styles.TitleLogo}
+                    />
                     </View>
-                )}
-            />
+                    {/* <Text style={styles.Title}>Navegue pelos nossos lançamentos!</Text> */}
+                    <FlatList styles={styles.flatItem}
+                        data={this.state.lancamentos}
+                        keyExtractor={item => item.idLancamento}
+                        renderItem={({ item }) => (
+                            <View>
+                                <Text styles={styles.flatItem}>{item.sinopse}</Text>
+                                <Text styles={styles.flatItem}>{item.titulo}</Text>
+                                <Text styles={styles.flatItem}>{item.idCategoriaNavigation.nomeCategoria}</Text>
+                                <Text styles={styles.flatItem}>{item.idFormatoNavigation.nomeFormato}</Text>
+                                <Text styles={styles.flatItem}>{item.duracao}</Text>
+                                <Text styles={styles.flatItem}>{item.dataLancamento}</Text>
+                            </View>
+                        )}
+                    />
+                </View>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    tabBarNavigatorIcon: { width: 25, height: 25, tintColor: 'white' }
+    tabBarNavigatorIcon: {
+        width: 25,
+        height: 25,
+        tintColor: 'white'
+    },
+    main: {
+        display: "flex",
+        alignContent: 'center',
+        alignContent: 'center',
+        flex: 1,
+        backgroundColor: "#252525"
+    },
+    mainBody: {
+        color: "#fff"
+    },
+    Title: {
+        display: 'flex',
+        textAlign: "center",
+        justifyContent: "center",
+        fontSize: 20,
+        backgroundColor: 'white',
+        marginTop: 20,
+        marginBottom: 20,
+        alignSelf: 'center',
+        width: 200,
+        // fontFamily: ''
+    },
+    TitleLogo: {
+        marginTop: 20,
+        marginBottom: 20,
+        alignSelf: 'center',
+        width: 350,
+        backgroundColor: '#000'
+
+    },
+    flatItem:{
+        display: 'flex',
+        textAlign: "center",
+        justifyContent: "center",
+        fontSize: 20,
+        backgroundColor: 'white',
+        marginTop: 20,
+        marginBottom: 20,
+        alignSelf: 'center',
+        width: 200,
+    }
+
+    // Background: {
+    //     width: 100,
+    //     height: 100,
+    //     backgroundColor: 'black'
+    // }
+
 });
 
 export default Main;
