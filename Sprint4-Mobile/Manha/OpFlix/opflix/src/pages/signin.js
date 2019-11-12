@@ -72,8 +72,10 @@ class SignIn extends Component {
     return (
       <View>
         <ImageBackground source={image} style={{ width: '-100%', height: '100%', display: "flex", justifyContent: "center", alignItems: "center", }}>
-          <View style={styles.Container}>
+          <View>
             <Text style={styles.Title}>Efetue seu login</Text>
+          </View>
+          <View style={styles.Container}>
             <TextInput
               placeholder="Email"
               onChangeText={email => this.setState({ email })}
@@ -97,7 +99,7 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
-  ContentInput: {  
+  ContentInput: {
     color: '#000',
     fontWeight: 'bold',
     fontSize: 20,
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
     height: 30,
     fontSize: 100,
   },
-  Container:{
+  Container: {
     display: "flex",
     alignContent: 'space-around',
     flexDirection: 'column',
@@ -131,18 +133,26 @@ const styles = StyleSheet.create({
     height: 250,
     opacity: 0.8,
   },
-  Title:{
+  Title: {
     display: 'flex',
     textAlign: "center",
     justifyContent: "center",
-    fontSize: 15,
-    backgroundColor: 'white',
-    marginBottom: 20,
+    fontSize: 35,
+    marginBottom: 10,
     width: 150,
+    color: '#fff',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -2, height: 2 },
+    textShadowRadius: 10
+    // borderWidth: 1,
+    // borderStyle: 'solid',
+    // borderColor: '#000',
+    // textShadowColor: '#000'
+    // text
     // height: 30,
 
   },
-  Header:{
+  Header: {
 
   }
 });

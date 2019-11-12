@@ -4,6 +4,7 @@ import {
     AsyncStorage, Image,
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
+import fonte from 'https://fonts.googleapis.com/css?family=Scheherazade&display=swap'
 
 class Main extends Component {
     // apresentar a lista de lancamentos
@@ -38,24 +39,26 @@ class Main extends Component {
         return (
             <View style={styles.main}>
                 <View style={styles.mainBody}>
-                    <View>
-                    <Image
+                    <View style={styles.mainTab}>
+                        <Image
                             source={require("../assets/img/Logo_Opflix.png")}
                             style={styles.TitleLogo}
-                    />
+                        />
                     </View>
-                    {/* <Text style={styles.Title}>Navegue pelos nossos lançamentos!</Text> */}
                     <FlatList styles={styles.flatItem}
                         data={this.state.lancamentos}
                         keyExtractor={item => item.idLancamento}
                         renderItem={({ item }) => (
-                            <View>
-                                <Text styles={styles.flatItem}>{item.sinopse}</Text>
-                                <Text styles={styles.flatItem}>{item.titulo}</Text>
-                                <Text styles={styles.flatItem}>{item.idCategoriaNavigation.nomeCategoria}</Text>
-                                <Text styles={styles.flatItem}>{item.idFormatoNavigation.nomeFormato}</Text>
-                                <Text styles={styles.flatItem}>{item.duracao}</Text>
-                                <Text styles={styles.flatItem}>{item.dataLancamento}</Text>
+                            <View style={{ marginBottom: 20, borderColor: '#26DBD6', borderWidth: 1, borderStyle: 'solid' , marginBottom: 50 }}>
+                                <Text style={{ width: 415, backgroundColor: '#26DBD6', textAlign: "center", fontSize: 20, color: '#000', }}>Sinopse</Text>
+                                <Text style={styles.flatItemSinopse}>{item.sinopse}</Text>
+                                <View style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap' }}>
+                                    <Text style={styles.flatItemTitulo}>{item.titulo}</Text>
+                                    <Text style={styles.flatItem}>{item.idCategoriaNavigation.nomeCategoria}</Text>
+                                    <Text style={styles.flatItem}>{item.idFormatoNavigation.nomeFormato}</Text>
+                                    <Text style={styles.flatItem}>{item.duracao} Minutos</Text>
+                                    <Text style={styles.flatItem}>{item.dataLancamento}</Text>
+                                </View>
                             </View>
                         )}
                     />
@@ -66,11 +69,6 @@ class Main extends Component {
 }
 
 const styles = StyleSheet.create({
-    tabBarNavigatorIcon: {
-        width: 25,
-        height: 25,
-        tintColor: 'white'
-    },
     main: {
         display: "flex",
         alignContent: 'center',
@@ -80,6 +78,11 @@ const styles = StyleSheet.create({
     },
     mainBody: {
         color: "#fff"
+    },
+    mainTab: {
+        backgroundColor: '#000',
+        width: 420,
+        height: 80
     },
     Title: {
         display: 'flex',
@@ -94,23 +97,53 @@ const styles = StyleSheet.create({
         // fontFamily: ''
     },
     TitleLogo: {
-        marginTop: 20,
-        marginBottom: 20,
         alignSelf: 'center',
-        width: 350,
-        backgroundColor: '#000'
+        width: 200,
+        // backgroundColor: '#000'
 
     },
-    flatItem:{
+    flatItem: {
+        fontFamily: 'Scheherazade',
+        display: 'flex',
+        textAlign: "center",
+        justifyContent: "center",
+        flexDirection: 'row',
+        fontSize: 17,
+        color: '#fff',
+        alignSelf: 'center',
+        width: 102,
+        height: 50,
+        backgroundColor: "#000",
+        marginBottom: 1,
+        borderWidth: 1,
+        borderColor: '#fff',
+        borderStyle: 'solid'
+    },
+    flatItemTitulo: {
+        display: 'flex',
+        textAlign: "center",
+        justifyContent: "center",
+        flexDirection: 'row',
+        fontSize: 20,
+        color: '#fff',
+        alignSelf: 'center',
+        width: 430,
+        height: 50,
+        backgroundColor: "#26DBD6",
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: { width: -1, height: 1 },
+        textShadowRadius: 10
+    },
+    flatItemSinopse: {
         display: 'flex',
         textAlign: "center",
         justifyContent: "center",
         fontSize: 20,
-        backgroundColor: 'white',
-        marginTop: 20,
-        marginBottom: 20,
+        color: '#000',
         alignSelf: 'center',
-        width: 200,
+        width: 406,
+        height: 320,
+        backgroundColor: "#Fff"
     }
 
     // Background: {
