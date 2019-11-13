@@ -4,7 +4,11 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import MainScreen from './pages/main';
 import SignInScreen from './pages/signin';
-import FiltersScreen from './pages/filters';
+import ProfileScreen from './pages/profile';
+import FilterScreen from './pages/FiltrarCategoria';
+import LogoutScreen from './pages/Logout';
+
+
 
 
 // criar a navegacao com o login - autenticacao
@@ -12,13 +16,33 @@ const AuthStack = createStackNavigator({
   Sign: {screen: SignInScreen},
 });
 
+
 const MainNavigator = createBottomTabNavigator(
   {
     Main: {
       screen: MainScreen,
     },
-    Filters: {
-      screen: FiltersScreen,
+    // Profile: {
+    //   screen: ProfileScreen,
+    // },
+    // Filtros: {
+    //   screen: FilterScreen
+    // },
+    Logout:{
+      screen: LogoutScreen
+    },
+  },
+  {
+    // define a rota inicial
+    tabBarOptions: {
+      showIcon: true,
+      showLabel: false,
+      inactiveBackgroundColor: '#26DBD6',
+      activeBackgroundColor: '#26DBD6',
+      style: {
+        width: '100%',
+        height: 50,
+      },
     },
   },
 );

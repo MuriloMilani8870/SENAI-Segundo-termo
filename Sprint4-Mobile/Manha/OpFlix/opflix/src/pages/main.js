@@ -4,7 +4,7 @@ import {
     AsyncStorage, Image,
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import fonte from 'https://fonts.googleapis.com/css?family=Scheherazade&display=swap'
+// import fonte from 'https://fonts.googleapis.com/css?family=Scheherazade&display=swap'
 
 class Main extends Component {
     // apresentar a lista de lancamentos
@@ -15,6 +15,8 @@ class Main extends Component {
             lancamentos: [],
         };
     }
+
+ 
 
     componentDidMount() {
         this._carregarlancamentos();
@@ -33,7 +35,8 @@ class Main extends Component {
             .then(resposta => resposta.json())
             .then(data => this.setState({ lancamentos: data }))
             .catch(erro => console.warn(erro));
-    };
+    }
+
 
     render() {
         return (
@@ -49,7 +52,7 @@ class Main extends Component {
                         data={this.state.lancamentos}
                         keyExtractor={item => item.idLancamento}
                         renderItem={({ item }) => (
-                            <View style={{ marginBottom: 20, borderColor: '#26DBD6', borderWidth: 1, borderStyle: 'solid' , marginBottom: 50 }}>
+                            <View style={{ marginBottom: 20, borderColor: '#26DBD6', borderWidth: 1, borderStyle: 'solid', marginBottom: 50 }}>
                                 <Text style={{ width: 415, backgroundColor: '#26DBD6', textAlign: "center", fontSize: 20, color: '#000', }}>Sinopse</Text>
                                 <Text style={styles.flatItemSinopse}>{item.sinopse}</Text>
                                 <View style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap' }}>
@@ -99,11 +102,10 @@ const styles = StyleSheet.create({
     TitleLogo: {
         alignSelf: 'center',
         width: 200,
-        // backgroundColor: '#000'
 
     },
     flatItem: {
-        fontFamily: 'Scheherazade',
+        // fontFamily: 'Scheherazade',
         display: 'flex',
         textAlign: "center",
         justifyContent: "center",
@@ -144,7 +146,8 @@ const styles = StyleSheet.create({
         width: 406,
         height: 320,
         backgroundColor: "#Fff"
-    }
+    },
+  
 
     // Background: {
     //     width: 100,
