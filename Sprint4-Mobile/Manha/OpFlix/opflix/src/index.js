@@ -25,9 +25,9 @@ const MainNavigator = createBottomTabNavigator(
     // Profile: {
     //   screen: ProfileScreen,
     // },
-    // Filtros: {
-    //   screen: FilterScreen
-    // },
+      Filtros: {
+        screen: FilterScreen
+      },
     Logout:{
       screen: LogoutScreen
     },
