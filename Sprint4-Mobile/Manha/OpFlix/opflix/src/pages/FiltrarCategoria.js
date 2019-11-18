@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, AsyncStorage, Picker, TouchableOpacity , StyleSheet} from 'react-native';
+import { Text, View, AsyncStorage, Picker, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 class Categorias extends Component {
@@ -11,6 +11,15 @@ class Categorias extends Component {
       categoriaEscolhida: null,
       categorias: []
     }
+  }
+
+  static navigationOptions = {
+    tabBarIcon: () => (
+      <Image
+        source={require('../assets/img/Icon_Filter.png')}
+        style={styles.tabNavigatorIcon}
+      />
+    )
   }
 
   componentDidMount() {
@@ -45,24 +54,25 @@ class Categorias extends Component {
 
   render() {
     return (
-
-      <View>
-        <Text>Filtrar lançamentos por categoria</Text>
-        <Picker selectedValue={this.state.categoriaEscolhida} onValueChange={(itemValue) => this.setState({ categoriaEscolhida: itemValue })}>
-          <Picker.Item label="Escolha a plataforma:" value="0" selectedValue />
-          {this.state.categorias.map(e => {
-            return (<Picker.Item label={e.nomeCategoria} value={e.idCategoria} />
-            )
-          })}
-        </Picker>
-        <TouchableOpacity onPress={this._carregarLancamentos}>
-          <Text>Buscar</Text>
-        </TouchableOpacity>
+      <View style={styles.main}>
+        <View >
+          <Text style={styles.Picker}>Filtre os nossos lançamentos!</Text>
+          <Picker selectedValue={this.state.categoriaEscolhida} onValueChange={(itemValue) => this.setState({ categoriaEscolhida: itemValue })}>
+            <Picker.Item label="Escolha a plataforma:" value="0" selectedValue />
+            {this.state.categorias.map(e => {
+              return (<Picker.Item label={e.nomeCategoria} value={e.idCategoria} />
+              )
+            })}
+          </Picker>
+          <TouchableOpacity onPress={this._carregarLancamentos}>
+            <Text>Buscar</Text>
+          </TouchableOpacity>
+        </View>
         <FlatList
           data={this.state.lancamentos}
           keyExtractor={item => item.idLancamento}
           renderItem={({ item }) => (
-            <View>
+            <View style={{ marginBottom: 90, }}>
               <Text style={{ width: 415, backgroundColor: '#26DBD6', textAlign: "center", fontSize: 20, color: '#000', }}>Sinopse</Text>
               <Text style={styles.flatItemSinopse}>{item.sinopse}</Text>
               <View style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap' }}>
@@ -81,6 +91,17 @@ class Categorias extends Component {
 }
 const styles = StyleSheet.create(
   {
+    main: {
+      display: "flex",
+      alignContent: 'center',
+      alignContent: 'center',
+      flex: 1,
+      backgroundColor: "#252525"
+    }, Picker: {
+      color: '#fff',
+      textAlign: 'center',
+      fontSize: 20,
+    },
     flatItem: {
       // fontFamily: 'Scheherazade',
       display: 'flex',
@@ -123,6 +144,11 @@ const styles = StyleSheet.create(
       width: 406,
       height: 320,
       backgroundColor: "#Fff"
+    }, tabNavigatorIcon:
+    {
+      width: 25,
+      height: 25,
+      tintColor: 'white'
     },
   }
 )

@@ -16,7 +16,14 @@ class Main extends Component {
         };
     }
 
- 
+    static navigationOptions = {
+        tabBarIcon: () => (
+            <Image
+                source={require('../assets/img/Icon_Home.png')}
+                style={styles.tabNavigatorIcon}
+            />
+        )
+    }
 
     componentDidMount() {
         this._carregarlancamentos();
@@ -146,8 +153,13 @@ const styles = StyleSheet.create({
         width: 406,
         height: 320,
         backgroundColor: "#Fff"
+    }, tabNavigatorIcon:
+    {
+        width: 35,
+        height: 35,
+        tintColor: 'white'
     },
-  
+
 
     // Background: {
     //     width: 100,

@@ -28,7 +28,7 @@ class FiltrarCategoria extends Component {
     }
 }
 const styles = StyleSheet.create({
-    tabNavigatorIcon: { width: 25, height: 25, tintColor: 'white' }
+    tabNavigatorIcon: { width: 35, height: 35, tintColor: 'white' }
 });
 
 export default FiltrarCategoria;
