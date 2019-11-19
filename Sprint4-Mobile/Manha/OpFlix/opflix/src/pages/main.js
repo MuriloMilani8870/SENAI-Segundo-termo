@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
     mainTab: {
         backgroundColor: '#000',
-        width: 420,
+        width: 410,
         height: 80
     },
     Title: {
@@ -112,15 +112,14 @@ const styles = StyleSheet.create({
 
     },
     flatItem: {
-        // fontFamily: 'Scheherazade',
         display: 'flex',
         textAlign: "center",
         justifyContent: "center",
         flexDirection: 'row',
-        fontSize: 17,
+        fontSize: 18,
         color: '#fff',
         alignSelf: 'center',
-        width: 102,
+        width: 102.3,
         height: 50,
         backgroundColor: "#000",
         marginBottom: 1,
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         flexDirection: 'row',
-        fontSize: 20,
+        fontSize: 24,
         color: '#fff',
         alignSelf: 'center',
         width: 430,
@@ -150,23 +149,15 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#000',
         alignSelf: 'center',
-        width: 406,
+        width: 410,
         height: 320,
-        backgroundColor: "#Fff"
+        backgroundColor: "#Fff",
     }, tabNavigatorIcon:
     {
         width: 35,
         height: 35,
         tintColor: 'white'
     },
-
-
-    // Background: {
-    //     width: 100,
-    //     height: 100,
-    //     backgroundColor: 'black'
-    // }
-
 });
 
 export default Main;

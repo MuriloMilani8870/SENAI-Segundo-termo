@@ -56,6 +56,12 @@ class Categorias extends Component {
     return (
       <View style={styles.main}>
         <View >
+          <View style={styles.mainTab}>
+            <Image
+              source={require("../assets/img/Logo_Opflix.png")}
+              style={styles.TitleLogo}
+            />
+          </View>
           <Text style={styles.Picker}>Filtre os nossos lançamentos!</Text>
           <Picker selectedValue={this.state.categoriaEscolhida} onValueChange={(itemValue) => this.setState({ categoriaEscolhida: itemValue })}>
             <Picker.Item label="Escolha a plataforma:" value="0" selectedValue />
@@ -92,6 +98,7 @@ class Categorias extends Component {
 const styles = StyleSheet.create(
   {
     main: {
+      
       display: "flex",
       alignContent: 'center',
       alignContent: 'center',
@@ -100,15 +107,25 @@ const styles = StyleSheet.create(
     }, Picker: {
       color: '#fff',
       textAlign: 'center',
-      fontSize: 20,
+      fontSize: 25,
+    },
+    TitleLogo: {
+      alignSelf: 'center',
+      width: 200,
+    },
+    mainTab: {
+      display: 'flex',
+      alignContent: 'center',
+      backgroundColor: '#000',
+      width: 420,
+      height: 80
     },
     flatItem: {
-      // fontFamily: 'Scheherazade',
       display: 'flex',
       textAlign: "center",
       justifyContent: "center",
       flexDirection: 'row',
-      fontSize: 17,
+      fontSize: 18,
       color: '#fff',
       alignSelf: 'center',
       width: 102,
@@ -124,10 +141,10 @@ const styles = StyleSheet.create(
       textAlign: "center",
       justifyContent: "center",
       flexDirection: 'row',
-      fontSize: 20,
+      fontSize: 24,
       color: '#fff',
       alignSelf: 'center',
-      width: 430,
+      width: 428,
       height: 50,
       backgroundColor: "#26DBD6",
       textShadowColor: 'rgba(0, 0, 0, 0.75)',
@@ -141,11 +158,10 @@ const styles = StyleSheet.create(
       fontSize: 20,
       color: '#000',
       alignSelf: 'center',
-      width: 406,
+      width: 428,
       height: 320,
       backgroundColor: "#Fff"
-    }, tabNavigatorIcon:
-    {
+    }, tabNavigatorIcon: {
       width: 25,
       height: 25,
       tintColor: 'white'
