@@ -98,9 +98,7 @@ class Categorias extends Component {
 const styles = StyleSheet.create(
   {
     main: {
-
       display: "flex",
-      alignContent: 'center',
       alignContent: 'center',
       flex: 1,
       backgroundColor: "#252525"
