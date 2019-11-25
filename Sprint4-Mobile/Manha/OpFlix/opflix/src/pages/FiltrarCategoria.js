@@ -62,16 +62,16 @@ class Categorias extends Component {
               style={styles.TitleLogo}
             />
           </View>
-          <Text style={styles.Picker}>Filtre os nossos lançamentos!</Text>
-          <Picker selectedValue={this.state.categoriaEscolhida} onValueChange={(itemValue) => this.setState({ categoriaEscolhida: itemValue })}>
+          <Text style={styles.PickerTitle}>Filtre os nossos lançamentos!</Text>
+          <Picker style={styles.PickerButton} selectedValue={this.state.categoriaEscolhida} onValueChange={(itemValue) => this.setState({ categoriaEscolhida: itemValue })}>
             <Picker.Item label="Escolha a plataforma:" value="0" selectedValue />
             {this.state.categorias.map(e => {
               return (<Picker.Item label={e.nomeCategoria} value={e.idCategoria} />
               )
             })}
           </Picker>
-          <TouchableOpacity onPress={this._carregarLancamentos}>
-            <Text>Buscar</Text>
+          <TouchableOpacity onPress={this._carregarLancamentos} >
+            <Text style={styles.Button}>Buscar</Text>
           </TouchableOpacity>
         </View>
         <FlatList
@@ -98,16 +98,26 @@ class Categorias extends Component {
 const styles = StyleSheet.create(
   {
     main: {
-      
+
       display: "flex",
       alignContent: 'center',
       alignContent: 'center',
       flex: 1,
       backgroundColor: "#252525"
-    }, Picker: {
+    }, PickerTitle: {
       color: '#fff',
       textAlign: 'center',
+      fontSize: 35,
+    },
+    Button: {
+      color: "#000",
       fontSize: 25,
+      display: 'flex',
+      alignSelf: 'center',
+      backgroundColor: "#fff",
+      width: 350,
+      textAlign: 'center',
+      margin: 20,
     },
     TitleLogo: {
       alignSelf: 'center',
@@ -165,6 +175,13 @@ const styles = StyleSheet.create(
       width: 25,
       height: 25,
       tintColor: 'white'
+    },
+    PickerButton: {
+      color: "#fff",
+      backgroundColor: '#26DBD6',
+      fontSize: 25,
+      marginBottom: 20,
+      marginTop: 20
     },
   }
 )

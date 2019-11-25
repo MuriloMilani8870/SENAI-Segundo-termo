@@ -22,7 +22,7 @@ class FiltrarCategoria extends Component {
     render() {
         return (
             <View>
-                <TouchableOpacity><Text onLayout={this._Logout}>Sair</Text></TouchableOpacity>
+                <TouchableOpacity><Text onLayout={this._Logout}></Text></TouchableOpacity>
             </View>
         );
     }
