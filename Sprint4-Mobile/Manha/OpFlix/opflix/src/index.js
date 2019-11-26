@@ -4,8 +4,8 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import MainScreen from './pages/main';
 import SignInScreen from './pages/signin';
-import ProfileScreen from './pages/profile';
 import FilterScreen from './pages/FiltrarCategoria';
+import FilterScreen2 from './pages/FiltrarData';
 import LogoutScreen from './pages/Logout';
 
 
@@ -22,18 +22,17 @@ const MainNavigator = createBottomTabNavigator(
     Main: {
       screen: MainScreen,
     },
-    // Profile: {
-    //   screen: ProfileScreen,
-    // },
       Filtros: {
         screen: FilterScreen
+      },
+      FiltrosData: {
+        screen: FilterScreen2
       },
     Logout:{
       screen: LogoutScreen
     },
   },
   {
-    // define a rota inicial
     tabBarOptions: {
       showIcon: true,
       showLabel: false,
